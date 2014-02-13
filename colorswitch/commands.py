@@ -46,8 +46,13 @@ def _get_theme(theme):
         return theme
 
     data = http.get_file(theme.url)
+
     if not data:
-        return None
+        return theme
+
+    # Sanity check
+    if '<plist version=' not in str(data):
+        return theme
 
     theme.file_path = io.save_theme(data, theme.file_name)
     return theme

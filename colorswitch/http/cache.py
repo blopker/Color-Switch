@@ -25,13 +25,19 @@ def cache(fn):
         t = time.time()
         cache_time = settings.get('cache_time', 0)
         ans = False
+        to_remove = []
+
         for c in cacheDB:
             age = t - cacheDB[c][0]
             if age > cache_time:
-                del cacheDB[c]
+                to_remove.append(c)
                 continue
             if c == args:
                 ans = cacheDB[args][1]
+
+        for c in to_remove:
+            del cacheDB[c]
+
         return ans
 
     def wrap(*args):

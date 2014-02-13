@@ -34,7 +34,7 @@ class ColorSwitchInstallThemeCommand(sublime_plugin.WindowCommand):
 
     def on_get(self, theme):
         self.theme_status[theme.name].stop()
-        if not theme:
+        if not theme.file_path:
             status.error('Theme %s download failed.' % theme.name)
             return
         # Don't set if user has moved on already
