@@ -11,7 +11,7 @@
     /// Themes
     ////////////////////////////////////
     // Theme repo URLs
-    "repos":["https://github.com/Colorsublime/Colorsublime-Themes/blob/master/"],
+    "repos":["https://raw2.github.com/Colorsublime/Colorsublime-Themes/master/"],
     // Names of the themes to be managed.
     "installed_themes": [],
 

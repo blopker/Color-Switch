@@ -6,18 +6,18 @@ import sublime_plugin
 NO_SELECTION = -1
 
 
-class ColorSwitchInstallThemeCommand(sublime_plugin.WindowCommand):
+class ColorSwitchInstallSchemeCommand(sublime_plugin.WindowCommand):
     def run(self):
         print('Running install command.')
         self.theme_status = {}
-        self.status = status.loading('Getting theme list')
+        self.status = status.loading('Getting scheme list')
         self.original_theme = commands.get_current_theme()
         commands.fetch_theme_list(self.display_list)
 
     def display_list(self, themes):
         self.status.stop()
         if not themes:
-            status.error('Theme list not found. Please check internet ' +
+            status.error('Scheme list not found. Please check internet ' +
                          'connection or enable debug in the settings and ' +
                          'report the stack traces.')
             return
@@ -28,27 +28,27 @@ class ColorSwitchInstallThemeCommand(sublime_plugin.WindowCommand):
 
     def on_highlighted(self, theme_index):
         theme = self.themes[theme_index]
-        self.theme_status[theme.name] = status.loading('Downloading theme %s' % theme.name)
+        self.theme_status[theme.name] = status.loading('Downloading scheme %s' % theme.name)
         self.current_theme = theme
         commands.get_theme(self.themes[theme_index], self.on_get)
 
     def on_get(self, theme):
         self.theme_status[theme.name].stop()
         if not theme.file_path:
-            status.error('Theme %s download failed.' % theme.name)
+            status.error('Scheme %s download failed.' % theme.name)
             return
         # Don't set if user has moved on already
         if theme.file_name == self.current_theme.file_name:
-            status.message('Showing theme %s.' % theme.name)
+            status.message('Showing scheme %s.' % theme.name)
             commands.set_theme(theme)
 
     def on_select(self, theme_index):
         if theme_index is NO_SELECTION:
             commands.set_theme(self.original_theme)
-            status.message('Theme install canceled.')
+            status.message('Scheme install canceled.')
             return
         theme = self.themes[theme_index]
-        status.message('Installing Theme: %s' % theme)
+        status.message('Installing scheme: %s' % theme)
         commands.install_theme(theme, self.install_done)
 
     def install_done(self, theme):
@@ -56,11 +56,11 @@ class ColorSwitchInstallThemeCommand(sublime_plugin.WindowCommand):
 
         if theme is None:
             commands.set_theme(self.original_theme)
-            status.error('Theme install was unsuccessful. Please check console.')
+            status.error('Scheme install was unsuccessful. Please check console.')
             return
 
         commands.set_theme(theme)
-        status.message('Theme installed successfully!')
+        status.message('Scheme installed successfully!')
 
 
 def plugin_loaded():

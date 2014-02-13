@@ -1,5 +1,5 @@
 '''
-Collection of functions the PCLite plugin can invoke. Most if not all should be
+Collection of functions the plugin can invoke. Most if not all should be
 non-blocking (@async) functions to keep the main UI thread from freezing.
 
 These functions should catch all unexpected exceptions so the plugin does not
@@ -67,3 +67,4 @@ def install_theme(theme):
     theme = _get_theme(theme)
     set_theme(theme)
     settings.save_user()
+    return theme
