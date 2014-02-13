@@ -1,6 +1,5 @@
 '''
 Module to determine the correct downloader to use.
-By @blopker
 '''
 from . import requests, wget, curl
 from ... import logger
