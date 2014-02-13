@@ -18,7 +18,7 @@ class CurlDownloader(DownloaderBase):
     def get(self, url):
         try:
             log.debug('Curl downloader getting url %s', url)
-            result = subprocess.check_output(['curl', url])
+            result = subprocess.check_output(['curl', '--fail', url])
         except subprocess.CalledProcessError:
             log.error('Curl downloader failed.')
             traceback.print_exc()
