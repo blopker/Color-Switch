@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "ColorSwitch: Install Theme",
+        "command": "color_switch_install_theme"
+    }
+]

@@ -1,0 +1,25 @@
+{
+    ////////////////////////////////////
+    /// Debug
+    ////////////////////////////////////
+    // Set to true to disable cache and enable debug output.
+    "debug": false,
+    // Set to true to run tests on startup,
+    "run_tests": false,
+
+    ////////////////////////////////////
+    /// Themes
+    ////////////////////////////////////
+    // Theme repo URLs
+    "repos":["https://raw2.github.com/GianlucaGuarini/Colorsublime-Themes/master/"],
+    // Names of the themes to be managed.
+    "installed_themes": [],
+
+    ////////////////////////////////////
+    /// HTTP
+    ////////////////////////////////////
+    // Amount of time to cache HTTP requests in seconds.
+    "cache_time": 1000,
+    // HTTP timeout in seconds
+    "http_timeout": 10
+}
