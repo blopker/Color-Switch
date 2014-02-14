@@ -65,6 +65,8 @@ def set_theme(theme):
 @async
 def install_theme(theme):
     theme = _get_theme(theme)
+    if theme.file_path is None:
+        return None
     set_theme(theme)
     settings.save_user()
     return theme

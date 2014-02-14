@@ -48,7 +48,7 @@ class ColorSwitchInstallSchemeCommand(sublime_plugin.WindowCommand):
             status.message('Scheme install canceled.')
             return
         theme = self.themes[theme_index]
-        status.message('Installing scheme: %s' % theme.name)
+        status.message('Installing scheme %s' % theme.name)
         commands.install_theme(theme, self.install_done)
 
     def install_done(self, theme):
