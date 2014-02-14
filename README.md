@@ -3,6 +3,8 @@ Color Switch
 
 Plugin for [Color Sublime](http://colorsublime.com/)
 
+Deticated to [Kim](https://github.com/kimeberz) :heart:
+
 Requirements
 ------------
 * Sublime Text 3 (recent build)
