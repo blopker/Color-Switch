@@ -26,7 +26,7 @@ The "Packages" directory is located at:
 
 * Linux: `~/.config/sublime-text-3/Packages/`
 
-* Windows: `%APPDATA%\Sublime Text 3\Packages\` *Not tested, but may work*
+* Windows: `%APPDATA%\Sublime Text 3\Packages\`
 
 Functions
 ---------
