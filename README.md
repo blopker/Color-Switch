@@ -9,7 +9,12 @@ Requirements
 
 Installing
 ----------
+### With Package Control
+1. Install [Package Control](https://sublime.wbond.net/installation)
+2. Run “Package Control: Install Package” command
+3. Find and install the `Color Switch` plugin.
 
+### Manually
 Clone the repository in your Sublime Text "Packages" directory:
 
     git clone https://github.com/blopker/ColorSwitch.git
