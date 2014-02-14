@@ -19,7 +19,7 @@ Installing
 ### Manually
 Clone the repository in your Sublime Text "Packages" directory:
 
-    git clone https://github.com/blopker/ColorSwitch.git
+    git clone https://github.com/blopker/Color-Switch.git
 
 
 The "Packages" directory is located at:
