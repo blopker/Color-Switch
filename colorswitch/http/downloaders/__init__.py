@@ -1,7 +1,7 @@
 '''
 Module to determine the correct downloader to use.
 '''
-from . import requests, wget, curl
+from . import urllib, wget, curl
 from ... import logger
 log = logger.get(__name__)
 
@@ -13,5 +13,8 @@ def get():
     if wget.is_available():
         log.debug('Using WGET downloader.')
         return wget.WgetDownloader()
-    log.debug('Using Requests downloader.')
-    return requests.RequestsDownloader()
+    if urllib.is_available():
+        log.debug('Using Urllib downloader.')
+        return urllib.UrllibDownloader()
+    log.error('No usable downloader found. Your platform is not supported.')
+    return None

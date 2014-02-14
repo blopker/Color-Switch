@@ -6,8 +6,8 @@ import sublime
 import os
 
 plugin_name = 'ColorSwitch'
-FOLDER_REL = os.path.join('Packages', 'User', plugin_name)
-FOLDER_THEMES_REL = os.path.join(FOLDER_REL, 'themes')
+FOLDER_REL = 'Packages/User/' + plugin_name
+FOLDER_THEMES_REL = FOLDER_REL + '/themes'
 FOLDER_ABS = None
 FOLDER_THEMES_ABS = None
 

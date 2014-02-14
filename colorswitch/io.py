@@ -14,7 +14,7 @@ def save_theme(data, file_name):
     theme_path = os.path.join(themes_dir, file_name)
     with open(theme_path, 'wb') as f:
         f.write(data)
-    file_path = os.path.join(settings.get_themes_rel(), file_name)
+    file_path = settings.get_themes_rel() + '/' + file_name
     return file_path
 
 
@@ -23,5 +23,5 @@ def get_theme_path(file_name):
     themes_dir = settings.get_themes_abs()
     p = os.path.join(themes_dir, file_name)
     if os.path.exists(p):
-        return os.path.join(settings.get_themes_rel(), file_name)
+        return settings.get_themes_rel() + '/' + file_name
     return None
