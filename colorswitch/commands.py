@@ -58,8 +58,10 @@ def _get_theme(theme):
     return theme
 
 
-def set_theme(theme):
+def set_theme(theme, commit=False):
     settings.set_color_scheme(theme.file_path)
+    if commit:
+        settings.save_user()
 
 
 @async
@@ -67,6 +69,5 @@ def install_theme(theme):
     theme = _get_theme(theme)
     if theme.file_path is None:
         return None
-    set_theme(theme)
-    settings.save_user()
+    set_theme(theme, commit=True)
     return theme
