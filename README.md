@@ -1,3 +1,5 @@
+*This repo has moved to https://github.com/Colorsublime/Colorsublime-Plugin*
+
 Color Switch
 ============
 
